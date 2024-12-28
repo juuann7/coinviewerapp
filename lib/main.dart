@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       title: 'Coin Viewer',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 229, 145, 212),
+        scaffoldBackgroundColor: const Color.fromRGBO(44, 39, 39, 1),
       ),
       home: HomePage(),
     );

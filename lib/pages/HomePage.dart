@@ -48,10 +48,15 @@ class _HomePageState extends State<HomePage> {
   Widget _selectedCoinDropdown() {
     List<String> _coins = [
       "bitcoin",
-      "etherium",
+      "ethereum",
       "solana",
       "dogecoin",
-      "hyperliquid"
+      "hyperliquid",
+      "ai16z",
+      "bitget-token",
+      "tether",
+      "litecoin",
+      "polkadot"
     ];
     List<DropdownMenuItem<String>> _items = _coins
         .map(
@@ -60,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               e,
               style: TextStyle(
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: Colors.white,
                 fontSize: 40.0,
                 fontWeight: FontWeight.w600,
               ),
@@ -77,7 +82,7 @@ class _HomePageState extends State<HomePage> {
           _selectedCoin = _value!;
         });
       },
-      dropdownColor: const Color.fromARGB(255, 255, 0, 0),
+      dropdownColor: const Color.fromRGBO(255, 128, 43, 1),
       iconSize: 30.0,
       icon: const Icon(
         Icons.arrow_drop_down_sharp,
@@ -98,7 +103,8 @@ class _HomePageState extends State<HomePage> {
           num _usdPrice = _data['market_data']['current_price']['usd'];
           num _change24h = _data['market_data']['price_change_percentage_24h'];
           Map _exchangeRates = _data['market_data']['current_price'];
-          print(_exchangeRates);
+          // Use a logging framework instead of print
+          debugPrint(_exchangeRates.toString());
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
@@ -176,13 +182,15 @@ class _HomePageState extends State<HomePage> {
         vertical: _deviceHeight! * 0.01,
         horizontal: _deviceWidth! * 0.01,
       ),
-      color: const Color.fromRGBO(83, 88, 206, 0.5),
-      child: Text(
-        _description,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
-          fontWeight: FontWeight.w300,
+      color: const Color.fromRGBO(62, 57, 57, 1),
+      child: SingleChildScrollView(
+        child: Text(
+          _description,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+            fontWeight: FontWeight.w300,
+          ),
         ),
       ),
     );

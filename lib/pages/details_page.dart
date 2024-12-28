@@ -20,6 +20,17 @@ class DetailsPage extends StatelessWidget {
               );
             }),
       ),
+      appBar: AppBar(
+        title: const Text(
+          "Details",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color.fromRGBO(62, 57, 57, 1),
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Change back button color to white
+        ),
+      ),
     );
   }
 }
